@@ -3,12 +3,12 @@
 ## Stack used
 
 ### Backend
-Node.js
-Express
-Mongodb
-JWT
-Babelrc
+Node.js<br/>
+Express<br/>
+Mongodb<br/>
+JWT<br/>
+Babelrc<br/>
 
 ### Frontend
-Angular 8
-TypeScript
+Angular 8 <br/>
+TypeScript<br/>
