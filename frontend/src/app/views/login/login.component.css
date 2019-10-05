@@ -1,0 +1,32 @@
+.card {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 5vw;
+}
+
+.users {
+	margin-top: 1vw;
+}
+
+.list-group {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    align-items: center;
+}
+
+ul.list-group.list-group-flush {
+    margin-bottom: 2vw;
+}
+
+.list-group-flush .list-group-item {
+    margin-right: 1vw;
+}
+
+.input {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.delete , .update {
+	height: 3vw;
+}
