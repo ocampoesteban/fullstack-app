@@ -14,8 +14,8 @@ router
   .delete(cntrl.UserController.deleteUserById)
   .put(cntrl.UserController.updateUserById);
 
- router
-  .route('/users/login')
-  .post(cntrl.UserController.login);
+ //router
+  //.route('/users/login')
+  //.post(cntrl.UserController.login);
 
 export default router;

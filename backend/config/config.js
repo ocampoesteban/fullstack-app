@@ -1,6 +1,7 @@
 var config = {
 	port: process.env.PORT || 9000,
-	DBUrl:process.env.DATABASE_URL,
+	DBUrl: process.env.DATABASE_URL,
+	JWT: process.env.JWT,
 	endpoint: '/api',
 	messages : {
 	   	missing: 'not Found',

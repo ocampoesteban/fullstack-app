@@ -138,22 +138,5 @@ UserController.deleteUserById = async (req, res) => {
  * @param {Object} req - Express request object.
  * @param {Object} res - Express response object.
  */
-UserController.login = async(req, res) => {
-  //Login a registered user
-  try {
-    const { email, password } = req.body
-    console.log('Soydhjaskdhsak '+email +' - '+ password)
-    const user = await User.findByCredentials(email, password)
-    console.log('Soydhjaskdhsak '+email +' - '+ password)
-    if (!user) {
-        return res.status(401).send({error: 'Login failed! Check authentication credentials'})
-    }
-    const token = await user.generateAuthToken()
-    res.send({ user, token })
-  } catch (error) {
-    console.log(error)
-      res.status(400).send(error)
-  }
-}
 
 export default UserController;
