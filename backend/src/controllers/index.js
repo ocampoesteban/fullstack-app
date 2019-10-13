@@ -1,7 +1,7 @@
 import UserController from './user';
-//import Message from './message';
+import AuthenticationController from './authentication';
 
 //const controller = { User, Message };
-const cntrl = { UserController };
+const cntrl = { UserController , AuthenticationController };
 
 export default cntrl;

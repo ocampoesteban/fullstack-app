@@ -31,13 +31,13 @@ const userSchema = new mongoose.Schema({
 
 
 // Hash the password before saving the user model
-userSchema.pre('save', async function (next) {
+/*userSchema.pre('save', async function (next) {
     const user = this;
     if (user.isModified('password')) {
         user.password = await bcrypt.hash(user.password, 8)
     }
     next();
-})
+})*/
 
 userSchema.pre('remove', async function(next) {
   this.model('Message').deleteMany({ user: this._id }, next);

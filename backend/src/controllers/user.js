@@ -132,11 +132,4 @@ UserController.deleteUserById = async (req, res) => {
   }
 }
 
-/**
- * Login
- * @async
- * @param {Object} req - Express request object.
- * @param {Object} res - Express response object.
- */
-
 export default UserController;

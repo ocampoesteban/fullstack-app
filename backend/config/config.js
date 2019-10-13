@@ -4,6 +4,7 @@ var config = {
 	JWT: process.env.JWT,
 	endpoint: '/api',
 	messages : {
+		unauthorized: 'Unauthorized',
 	   	missing: 'not Found',
 		deleted: 'deleted successfully',
 		updated: 'updated successfully',
