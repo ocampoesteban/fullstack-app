@@ -6,8 +6,7 @@ const router = Router();
 
 router
   .route('/register')
-  .post(cntrl.AuthenticationController.register)
-  .post(cntrl.AuthenticationController.login);
+  .post(cntrl.AuthenticationController.register);
 
 router
   .route('/login')
@@ -15,7 +14,7 @@ router
 
 router
   .route('/me')
-  .get(cntrl.AuthenticationController.me);
+  .get(verifyToken,cntrl.AuthenticationController.me);
 
 
 export default router;

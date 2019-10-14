@@ -1,6 +1,4 @@
 import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
-import jsonwebtoken from 'jsonwebtoken';
 import validator from 'validator';
 
 
@@ -29,18 +27,10 @@ const userSchema = new mongoose.Schema({
     timestamps: true
 });
 
-
-// Hash the password before saving the user model
-/*userSchema.pre('save', async function (next) {
-    const user = this;
-    if (user.isModified('password')) {
-        user.password = await bcrypt.hash(user.password, 8)
-    }
-    next();
-})*/
-
+// It triggers when a user is deleted
+// Remove message related to user.id
 userSchema.pre('remove', async function(next) {
-  this.model('Message').deleteMany({ user: this._id }, next);
+    this.model('Message').deleteMany({ user: this._id }, next);
 });
 
 const User = mongoose.model('User', userSchema);

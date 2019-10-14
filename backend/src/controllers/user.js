@@ -41,11 +41,9 @@ UserController.addUser =  async (req, res) => {
       password: req.body.password,
       email: req.body.email
     });
-    //const token = await user.generateAuthToken(user);
     if (user) {
       res.status(201).send({
         statusCode:201,
-        //token: token,
         message: 'User ' + config.messages.success
       })
     }

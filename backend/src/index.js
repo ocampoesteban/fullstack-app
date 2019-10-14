@@ -16,13 +16,13 @@ app.use(bodyParser.json());
 // Start DB
 const eraseDatabaseOnSync = true;
 connectDb().then(async () => {
-  /*if (eraseDatabaseOnSync) {
+  if (eraseDatabaseOnSync) {
     await Promise.all([
       models.User.deleteMany({}),
       models.Message.deleteMany({}),
     ]);
     createData(); 
-  }*/
+  }
   app.listen(config.port, () =>
     console.log(`App listening on port ${config.port}!`),
   );
