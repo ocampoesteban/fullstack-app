@@ -8,8 +8,6 @@ import config from "../config/config";
 import createData from "../config/data";
 
 const app = express();
-
-
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:false}));
@@ -23,13 +21,13 @@ connectDb().then(async () => {
       models.User.deleteMany({}),
       models.Message.deleteMany({}),
     ]);
-    createData();
+    createData(); 
   }
   app.listen(config.port, () =>
-    console.log(`Example app listening on port ${config.port}!`),
+    console.log(`App listening on port ${config.port}!`),
   );
 });
 
 // Routes
 app.use(config.endpoint, routes.user);
-app.use('/messages', routes.message);
+app.use(config.endpoint, routes.authentication);

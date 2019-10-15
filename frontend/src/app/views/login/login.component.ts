@@ -19,14 +19,13 @@ export class LoginComponent implements OnInit {
   showUsers() {
     this.user.getUsersAPICall()
     .subscribe( (response: any) => 
-       this.users = response
+       this.users = response.users
     );
   }
 
   login(username: string) {
     this.user.createUser(username)
-    .subscribe( 
-      user => {
+    .subscribe( user => {
         console.log(username+' has been posted');
         this.users.push(user);
       },

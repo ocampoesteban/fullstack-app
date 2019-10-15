@@ -41,11 +41,9 @@ UserController.addUser =  async (req, res) => {
       password: req.body.password,
       email: req.body.email
     });
-    //const token = await user.generateAuthToken(user);
     if (user) {
       res.status(201).send({
         statusCode:201,
-        //token: token,
         message: 'User ' + config.messages.success
       })
     }
@@ -129,30 +127,6 @@ UserController.deleteUserById = async (req, res) => {
     	statusCode:404, 
       	message: 'User ' + config.messages.missing
     });
-  }
-}
-
-/**
- * Login
- * @async
- * @param {Object} req - Express request object.
- * @param {Object} res - Express response object.
- */
-UserController.login = async(req, res) => {
-  //Login a registered user
-  try {
-    const { email, password } = req.body
-    console.log('Soydhjaskdhsak '+email +' - '+ password)
-    const user = await User.findByCredentials(email, password)
-    console.log('Soydhjaskdhsak '+email +' - '+ password)
-    if (!user) {
-        return res.status(401).send({error: 'Login failed! Check authentication credentials'})
-    }
-    const token = await user.generateAuthToken()
-    res.send({ user, token })
-  } catch (error) {
-    console.log(error)
-      res.status(400).send(error)
   }
 }
 
