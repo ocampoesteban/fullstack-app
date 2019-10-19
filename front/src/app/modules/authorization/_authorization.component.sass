@@ -1,0 +1,47 @@
+@import '../../../../assets/main'
+
+.form-container
+    align-items: center
+    display: flex
+    height: 100vh
+    justify-content: center
+
+.form-container form
+    border: 1px solid rgba(0, 0, 0, 0.23)
+    border-radius: 15px
+    padding: 3vw
+    text-align: center
+    width: 30%
+
+h2.text-uppercase
+    margin-bottom: 2vw
+
+.form-group
+    margin-bottom: 2.5vw
+    text-align: left
+
+.sign-up
+    cursor: pointer
+    color: blue
+
+.button
+    display: flex
+    margin-top: 1vw
+
+button
+    &:hover  
+        background: lighten(#007bff, 10%)
+        border-color: lighten(#007bff, 10%)
+
+.button .btn.btn-primary
+    width: 100%
+
+.profile-pic 
+  float: left
+  width: 250px
+  @media screen and (max-width: $break-sm) 
+    width: 100px
+    float: none
+  
+  @media screen and (min-width: $break-md) 
+    float: right
