@@ -1,0 +1,17 @@
+<div class="form-container">
+    <form>
+        <h2 class="text-uppercase">sign up</h2>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="button">
+            <button (click)="registerUser()" class="btn btn-primary text-uppercase accept">accept</button>
+            <button (click)="login()" class="btn btn-primary text-uppercase cancel">cancel</button>
+        </div>
+    </form>
+</div>
