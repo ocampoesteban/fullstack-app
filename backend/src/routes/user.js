@@ -6,7 +6,7 @@ const router = Router();
 
 router
   .route('/users')
-  .get(verifyToken, cntrl.UserController.getUsers);
+  .get(verifyToken,cntrl.UserController.getUsers);
 
 router
   .route('/user')

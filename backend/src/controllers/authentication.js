@@ -66,26 +66,26 @@ AuthenticationController.me =  async (req, res) => {
  */
 AuthenticationController.login =  async (req, res) => {
     try {
-        await models.User.findOne({ email: req.body.email }, function (err, user) {
-        if (err) return res.status(500).send('Error on the server.');
-        if (!user) return res.status(404).send('User not found.');
-        
-        var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
-        if (passwordIsValid) return res.status(401).send({ auth: false, token: null });
-        
-        var token = jwt.sign({ id: user._id }, config.JWT, {
-            expiresIn: 86400 // expires in 24 hours
-        });
-        
-        res.status(200).send({ auth: true, token: token });
+      await models.User.findOne({ email: req.body.email }, function (err, user) {
+          if (err) return res.status(500).send({status:404, message:'Error on the server.'});
+          if (!user) return res.status(404).send({status:404, message:'User not found.'});
+          
+          // check if the password is valid
+          var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
+          if (!passwordIsValid) return res.status(401).send({status:401, auth: false, token: null, message:'Invalid password'});
+      
+          var token = jwt.sign({ id: user._id }, config.JWT, {
+            expiresIn: 50 // 
+          });
+      
+          res.status(200).send({ auth: true, token: token});
         });
     }catch (e) {
-        res.status(500).send({
-          statusCode:500, 
-          message: e
-        })
+      res.status(500).send({
+        statusCode:500, 
+        message: e
+      })
     }
-    
 };
 
 export default AuthenticationController;
