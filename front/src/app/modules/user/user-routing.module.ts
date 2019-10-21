@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserBrowserComponent } from './user-browser/user-browser.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { AuthGuard } from 'src/app/core/guard/auth.guard';
 
 const routes: Routes = [
-  { path:'',component: UserBrowserComponent },
-  { path:'edit',component: UserEditComponent }
+  { path:'',component: UserBrowserComponent, canActivate: [AuthGuard] },
+  { path:'edit',component: UserEditComponent, canActivate: [AuthGuard]  }
 ];
 
 @NgModule({

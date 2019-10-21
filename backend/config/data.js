@@ -2,15 +2,15 @@ import models from '../src/models';
 
 const createData = async () => {
   const user1 = new models.User({
-    username: 'rwieruch',
-    email: 'wdasads@gmail.com',
-    password: '1'
+    username: 'juan',
+    email: 'juan@gmail.com',
+    password: 'juan'
   });
 
   const user2 = new models.User({
-    username: 'ddavids',
-    email: 'sklsjfods@gmail.com',
-    password: '2'
+    username: 'pepe',
+    email: 'pepe@gmail.com',
+    password: 'pepe'
   });
 
   const message1 = new models.Message({
@@ -27,13 +27,13 @@ const createData = async () => {
     text: 'Published a complete ...',
     user: user2.id,
   });
-
+/*
   await message1.save();
   await message2.save();
   await message3.save();
 
   await user1.save();
-  await user2.save();
+  await user2.save();*/
 };
 
 

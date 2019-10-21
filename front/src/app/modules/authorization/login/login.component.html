@@ -1,19 +1,30 @@
 <div class="form-container">
-    <form>
+    <form [formGroup]="loginForm">
         <h2 class="text-uppercase">Login</h2>
         <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Username is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" formControlName="password" id="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+            </div>
         </div>
         <div class="form-group">
             <small (click)="signUp()" class="form-text sign-up">No account? Sign up for free</small>
         </div>
+        <div class="alert alert-danger error-message" role="alert" *ngIf=errorMessage.IsDisplayed>
+            {{errorMessage.message}}
+          </div>
         <div class="button">
-            <button class="btn btn-primary text-uppercase login">login</button>
+            <button (click)="login($event)" class="btn btn-primary text-uppercase login">login</button>
         </div>
     </form>
 </div>
