@@ -9,7 +9,7 @@ import { User } from '../models/User';
 })
 export class UserService {
     
-    API_URL : string = 'http://localhost:8080/api/users/';
+    API_URL : string = 'http://localhost:8080/api/';
   
     private handleError(error: any) {
       console.log(error);
@@ -18,8 +18,9 @@ export class UserService {
     
     constructor(private http:HttpClient) {}
  
-    getUsersAPICall(): Observable<User[]> {
-      return this.http.get<User[]>(this.API_URL).pipe(
+    getUsers(): Observable<User[]> {
+      let SUFIX_URL : string = 'users/'
+      return this.http.get<User[]>(this.API_URL+SUFIX_URL).pipe(
         tap(data => console.log(data)),
         catchError(this.handleError)
       );
@@ -34,7 +35,7 @@ export class UserService {
       }
    }
 
-   delete(id:string) : Observable<{}> {
+   deleteUser(id:string) : Observable<{}> {
     const URL = `${this.API_URL}`+'/'+id;
     if(URL) {
       return this.http.delete(URL)

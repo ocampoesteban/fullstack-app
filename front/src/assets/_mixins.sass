@@ -1,0 +1,23 @@
+@import './_var'
+
+/*!  Circle
+@mixin circle
+    @include border-radius(100%)
+
+/*! Breakpoints
+@mixin break-point($media)
+    @if $media == sm
+        @media (min-width: $break-sm)
+            @content
+
+    @else if $media == md
+        @media (min-width: $break-md)
+            @content
+
+    @else if $media == lg
+        @media (min-width: $break-lg)
+            @content
+
+    @else if $media == xl
+        @media (min-width: $break-xl)
+            @content
