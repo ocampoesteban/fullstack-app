@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthorizationService } from './core/services/AuthorizationService';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'front';
+
+  constructor(
+    private authorizationService: AuthorizationService,
+  ) { }
+
+  isUserLogged(){
+    return this.authorizationService.isLogged;
+  }
 }
