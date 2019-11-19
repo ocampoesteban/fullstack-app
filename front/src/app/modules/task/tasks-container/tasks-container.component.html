@@ -1,5 +1,7 @@
-
-<div class="task-container">
-    <app-tasks-list class="task-list"></app-tasks-list>
-    <app-task-description class="task-description" *ngIf="isMobile && isTaskTouched"></app-task-description>
+<div class="container">
+    <div class="task">
+        <app-tasks-list class="task-list bg-light"></app-tasks-list>
+        <app-task-description class="task-description" *ngIf="isMobile && isTaskTouched"></app-task-description>
+    </div>
+    <app-footer></app-footer>
 </div>
