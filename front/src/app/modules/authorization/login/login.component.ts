@@ -43,21 +43,15 @@ export class LoginComponent implements OnInit {
 
     this.submitted = true;
 
-
     // stop here if form is invalid
-    if (this.loginForm.invalid) {
-        return;
-    }
+    if (this.loginForm.invalid) { return }
 
-
-    if (this.loginForm.touched) {
-      this.authorizationService.login({email: this.loginForm.value.email,password: this.loginForm.value.password})
-      .subscribe(
-        () => this.router.navigateByUrl('/user'),
-        (error ) => {
-          this.errorMessage.IsDisplayed = true,
-          this.errorMessage.message = error.error.message
-      });
-    }
+    this.authorizationService.login({email: this.loginForm.value.email,password: this.loginForm.value.password})
+    .subscribe(
+      () => this.router.navigateByUrl('/dashboard'),
+      (error ) => {
+        this.errorMessage.IsDisplayed = true,
+        this.errorMessage.message = error.error.message
+    });
   }
 }

@@ -8,19 +8,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './modules/authorization/login/login.component';
 import { SignUpComponent } from './modules/authorization/sign-up/sign-up.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { AuthGuard } from './core/guard/auth.guard';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignUpComponent,
-    HeaderComponent,
-    FooterComponent,
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
@@ -29,7 +26,6 @@ import { AuthGuard } from './core/guard/auth.guard';
   ],
   providers: [
     AuthorizationService,
-    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
