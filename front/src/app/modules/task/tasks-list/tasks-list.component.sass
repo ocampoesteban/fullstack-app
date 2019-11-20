@@ -1,0 +1,45 @@
+@import '../../../../assets/_main'
+
+.divider
+    border-bottom: 1px solid $gray-border-color
+    height: 14.2vh
+    margin-bottom: 1vw
+    margin-left: -1.2vw
+    max-height: 14.2vh
+    max-width: 115%
+    min-height: 14.2vh
+    min-width: 115%
+    width: 115%
+    z-index: 1
+
+.navbar
+    height: 67vh
+    padding-top: 0
+    padding-left: 0
+    padding-right: 0
+    justify-content: center
+
+    input.search
+        width: 95%
+
+    > ul.navbar-nav
+        height: 70%
+        max-height: 100%
+        overflow-x: hidden
+        overflow-y: auto
+        text-align: center
+        width: 100%
+
+        li.nav-item
+            border-bottom: 1px solid #8080804d
+            display: flex
+            justify-content: space-between
+            padding-left: 1vw
+            padding-right: 1vw
+
+            &:first-child
+                border-top: 1px solid #8080804d
+                color: red
+    
+    button.create    
+        width: 95%
