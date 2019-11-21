@@ -1,15 +1,5 @@
 @import '../../../../assets/_main'
 
-.navbar
-    height: 72vh
-    padding-top: 0
-
-ul.navbar-nav
-    height: 100%
-    max-height: 100%
-    overflow-x: hidden
-    overflow-y: auto
-
 .divider
     border-bottom: 1px solid $gray-border-color
     height: 14.2vh
@@ -21,3 +11,35 @@ ul.navbar-nav
     min-width: 115%
     width: 115%
     z-index: 1
+
+.navbar
+    height: 67vh
+    padding-top: 0
+    padding-left: 0
+    padding-right: 0
+    justify-content: center
+
+    input.search
+        width: 95%
+
+    > ul.navbar-nav
+        height: 70%
+        max-height: 100%
+        overflow-x: hidden
+        overflow-y: auto
+        text-align: center
+        width: 100%
+
+        li.nav-item
+            border-bottom: 1px solid #8080804d
+            display: flex
+            justify-content: space-between
+            padding-left: 1vw
+            padding-right: 1vw
+
+            &:first-child
+                border-top: 1px solid #8080804d
+                color: red
+    
+    button.create    
+        width: 95%
