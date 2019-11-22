@@ -10,7 +10,7 @@ export class TasksContainerComponent implements OnInit {
   }
 
   isTaskTouched: boolean= true;
-  isMobile:boolean = false;
+  isMobile:boolean = true;
 
   getIsMobile(): boolean {
     const WIDTH = document.documentElement.clientWidth;
@@ -23,12 +23,12 @@ export class TasksContainerComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
+  ngOnInit() {/*
     this.isMobile = this.getIsMobile();
     
     window.onresize = () => {
       this.isMobile = this.getIsMobile();
-    };
+    };*/
   }
 
 }

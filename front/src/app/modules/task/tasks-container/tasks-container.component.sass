@@ -1,17 +1,28 @@
 @import '../../../../assets/_main'
 
-.container
-    margin: 0 auto
-    width: 70vw
+.col-md-4
+    @include breakpoint(md)
+        padding-right: 0
+    
+    @include breakpoint(lg)
+        padding-right: 0
+
+    @include breakpoint(xl)
+        padding-right: 0
+
+.container-fluid
     border: 1px solid $gray-border-color
-    border-radius: 15px
+        radius: 15px
+    margin: 0 auto
+    max-width: 100%
     overflow: hidden
+    padding:
+        left: 0
+        right: 0
+    width: 100%
+    
+    @include breakpoint(lg)
+        width: 83%
 
-.task
-    display: flex
-
-app-task-description.task-description
-    width: 75%
-
-app-tasks-list.task-list
-    width: 25%
+    @include breakpoint(xl)
+        width: 65%

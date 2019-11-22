@@ -7,7 +7,7 @@ import { AuthorizationService } from './core/services/AuthorizationService';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'front';
+  title = 'Todo App';
 
   constructor(
     private authorizationService: AuthorizationService,
