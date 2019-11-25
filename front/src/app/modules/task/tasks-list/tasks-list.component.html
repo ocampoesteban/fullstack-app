@@ -3,7 +3,7 @@
     <input type="search" class="form-control search" id="search" placeholder="Search a task ...">
     <ul class="navbar-nav">
         <li class="nav-item" *ngFor="let task of tasks;let _index = index; trackBy: trackByFunction" >
-            <a class="nav-link" href="#">{{task.name}}</a>
+            <a class="nav-link" [routerLink]="['./detail', _index]" routerLinkActive="active">{{task.name}}</a>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true" (click)="deleteTask(_index)">&times;</span>
             </button>

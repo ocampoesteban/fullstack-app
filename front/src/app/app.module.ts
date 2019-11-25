@@ -20,9 +20,9 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [
     AuthorizationService,

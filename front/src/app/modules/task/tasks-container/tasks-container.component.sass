@@ -1,15 +1,5 @@
 @import '../../../../assets/_main'
 
-.col-md-4
-    @include breakpoint(md)
-        padding-right: 0
-    
-    @include breakpoint(lg)
-        padding-right: 0
-
-    @include breakpoint(xl)
-        padding-right: 0
-
 .container-fluid
     border: 1px solid $gray-border-color
         radius: 15px
@@ -26,3 +16,32 @@
 
     @include breakpoint(xl)
         width: 65%
+
+.right-side
+    @include breakpoint(md)
+        padding-left: 0
+    
+    @include breakpoint(lg)
+        padding-left: 0
+
+    @include breakpoint(xl)
+        padding-left: 0
+
+.left-side
+    @include breakpoint(md)
+        padding-right: 0
+    
+    @include breakpoint(lg)
+        padding-right: 0
+
+    @include breakpoint(xl)
+        padding-right: 0
+
+.header
+    border-bottom: 1px solid $gray-border-color
+    height: 14.1vh
+    margin:
+        left: -3%
+    max-height: 14.1vh
+    min-height: 14.1vh
+    padding-left: 1vw

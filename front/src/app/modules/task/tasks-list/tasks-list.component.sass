@@ -39,6 +39,9 @@
                 left: 4vw
                 right: 4vw
 
+            &:first-child
+                border-top: 1px solid #8080804d
+
             @include breakpoint(md)
                 padding:
                     left: 1vw
@@ -53,9 +56,6 @@
                 padding:
                     left: 1vw
                     right: 1vw
-
-            &:first-child
-                border-top: 1px solid #8080804d
     
     button.create    
         width: 95%
