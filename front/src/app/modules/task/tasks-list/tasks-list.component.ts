@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/core/models/Task';
-import { TryCatchStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-tasks-list',
@@ -16,6 +15,7 @@ export class TasksListComponent implements OnInit {
   }
 
   tasks: Task [] = [];
+  isEmpty: boolean = false;
 
   /**
    * Function use to improve ngfor performance

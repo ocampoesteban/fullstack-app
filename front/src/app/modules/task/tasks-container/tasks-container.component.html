@@ -1,7 +1,12 @@
 <div class="container-fluid">
     <div class="row">
-        <app-tasks-list class="task-list bg-light col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"></app-tasks-list>
-        <app-task-description class="task-description col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8" *ngIf="isMobile && isTaskTouched"></app-task-description>
+        <div class="left-side bg-light col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <app-tasks-list></app-tasks-list>
+        </div>
+        <div class="right-side col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+            <div class="header" [hidden]="!isMobile"></div>
+            <router-outlet></router-outlet>
+        </div>
     </div>
     <app-footer></app-footer>
 </div>

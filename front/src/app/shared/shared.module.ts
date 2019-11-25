@@ -1,19 +1,20 @@
-import {NgModule} from '@angular/core';
-import { EntityContainerComponent } from './entity-container/entity-container.component';
+import { NgModule } from '@angular/core';
 import { NotAllowedComponent } from './not-allowed/not-allowed.component';
 import { FooterComponent } from './footer/footer.component';
+import { EmptyStateComponent } from './empty-state/empty-state.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [ ],
   exports: [
     NotAllowedComponent,
-    EntityContainerComponent,
     FooterComponent,
+    EmptyStateComponent
   ],
   declarations: [
-    EntityContainerComponent,
     NotAllowedComponent,
     FooterComponent,
+    EmptyStateComponent
   ],
   entryComponents: [ ],
   providers: [ ]

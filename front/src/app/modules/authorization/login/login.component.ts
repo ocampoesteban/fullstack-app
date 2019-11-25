@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
 
     this.authorizationService.login({email: this.loginForm.value.email,password: this.loginForm.value.password})
     .subscribe(
-      () => this.router.navigateByUrl('/dashboard'),
+      () => this.router.navigateByUrl('tasks/dashboard'),
       (error ) => {
         this.errorMessage.IsDisplayed = true,
         this.errorMessage.message = error.error.message

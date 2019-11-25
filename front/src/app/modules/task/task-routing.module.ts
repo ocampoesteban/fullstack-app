@@ -3,16 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { TaskEditComponent } from './task-edit/task-edit.component';
 import { TaskCreateComponent } from './task-create/task-create.component';
 import { TasksContainerComponent } from './tasks-container/tasks-container.component';
+import { TaskDescriptionComponent } from './task-description/task-description.component';
+import { EmptyStateComponent } from 'src/app/shared/empty-state/empty-state.component';
 
 const routes: Routes = [
   { path: '', 
-    component: TasksContainerComponent 
-  },
-  { path: 'edit/:taskID', 
-    component: TaskEditComponent 
-  },
-  { path: 'create', 
-    component: TaskCreateComponent 
+    component: TasksContainerComponent,
+    children: [
+      { path: 'dashboard', component: EmptyStateComponent },
+      { path: 'detail/:taskId', component: TaskDescriptionComponent },
+      { path: 'edit/:taskId', component: TaskEditComponent },
+      { path: 'create/:taskId', component: TaskCreateComponent },
+   ],
   }
 ];
 

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EntityContainerComponent } from './entity-container.component';
+import { EmptyStateComponent } from './empty-state.component';
 
-describe('EntityContainerComponent', () => {
-  let component: EntityContainerComponent;
-  let fixture: ComponentFixture<EntityContainerComponent>;
+describe('EmptyStateComponent', () => {
+  let component: EmptyStateComponent;
+  let fixture: ComponentFixture<EmptyStateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EntityContainerComponent ]
+      declarations: [ EmptyStateComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EntityContainerComponent);
+    fixture = TestBed.createComponent(EmptyStateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
