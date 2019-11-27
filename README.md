@@ -12,3 +12,7 @@ Babelrc<br/>
 ### Frontend
 Angular 8 <br/>
 TypeScript<br/>
+Sass<br/>
+Jasmine<br/>
+Bootstrap<br/>
+
