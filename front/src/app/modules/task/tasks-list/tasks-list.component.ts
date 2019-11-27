@@ -15,6 +15,7 @@ export class TasksListComponent implements OnInit {
   }
 
   tasks: Task [] = [];
+  searchedString:string;
   isEmpty: boolean = false;
 
   /**

@@ -1,13 +1,22 @@
 <div class="divider"></div>
 <nav class="navbar">
-    <input type="search" class="form-control search" id="search" placeholder="Search a task ...">
+    <input type="search" class="form-control search" id="search" placeholder="Search a task ..."  [(ngModel)]="searchedString">
     <ul class="navbar-nav">
-        <li class="nav-item" *ngFor="let task of tasks;let _index = index; trackBy: trackByFunction" >
-            <a class="nav-link" [routerLink]="['./detail', _index]" routerLinkActive="active">{{task.name}}</a>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true" (click)="deleteTask(_index)">&times;</span>
-            </button>
-        </li>
+        <ng-container *ngIf="tasks.length>0; else emptyList">
+            <li class="nav-item" *ngFor="let task of tasks | filter: 'name' : searchedString ; let _index = index; trackBy: trackByFunction" >
+                <a class="nav-link" [routerLink]="['./detail', _index]" routerLinkActive="active">{{task.name}}</a>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" (click)="deleteTask(_index)">&times;</span>
+                </button>
+            </li>
+        </ng-container>
+       
+        <ng-template #emptyList>
+            <p>
+                Empty list   
+            </p>
+        </ng-template>
     </ul>
+   
     <button type="button" class="btn btn-outline-primary create" (click)="addTask()">Create</button>
 </nav>

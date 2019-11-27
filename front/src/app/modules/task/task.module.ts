@@ -8,6 +8,8 @@ import { TasksContainerComponent } from './tasks-container/tasks-container.compo
 import { TasksListComponent } from './tasks-list/tasks-list.component';
 import { TaskDescriptionComponent } from './task-description/task-description.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ListFilterPipe } from 'src/app/core/pipes/list-filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
     TaskCreateComponent,
     TasksContainerComponent,
     TasksListComponent,
-    TaskDescriptionComponent
+    TaskDescriptionComponent,
+
+    // Custom pipes
+    ListFilterPipe 
   ],
   exports: [
     TaskEditComponent,
@@ -23,6 +28,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
   ],
   imports: [
     CommonModule, //ngIf, ngFor..
+    FormsModule, // ngModel
     SharedModule,
     TaskRoutingModule
   ],

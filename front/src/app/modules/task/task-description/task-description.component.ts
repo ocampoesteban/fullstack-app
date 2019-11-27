@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Task } from 'src/app/core/models/Task';
 
 @Component({
   selector: 'app-task-description',
