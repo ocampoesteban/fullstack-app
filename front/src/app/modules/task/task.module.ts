@@ -27,8 +27,8 @@ import { FormsModule } from '@angular/forms';
     TaskCreateComponent
   ],
   imports: [
-    CommonModule, //ngIf, ngFor..
-    FormsModule, // ngModel
+    CommonModule, // ngIf, ngFor..
+    FormsModule,  // ngModel
     SharedModule,
     TaskRoutingModule
   ],
