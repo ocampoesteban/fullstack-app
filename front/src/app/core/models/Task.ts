@@ -3,12 +3,14 @@ export class Task {
     description: string;
     createdAt: Date;
     deletedAt: Date;
+    iconPath: string;
 
     constructor(
         fields?: {
             name?: string,
             description?: string,
             createdAt?: Date,
+            iconPath: string,
             deletedAt?: Date
         }) {
         

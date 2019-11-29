@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/core/models/Task';
+import { ListFilterPipe } from 'src/app/core/pipes/list-filter.pipe';
 
 @Component({
   selector: 'app-tasks-list',
@@ -14,7 +15,12 @@ export class TasksListComponent implements OnInit {
     this.loadTasksList();
   }
 
-  tasks: Task [] = [];
+  tasks: Task [] = [
+                    { description: 'asdñlk', createdAt: new Date() , deletedAt:new Date(),  name: 'My Day', iconPath: "assets/icon/star-24px.svg" },
+                    { description: 'asdñlk', createdAt: new Date() , deletedAt:new Date(),  name: 'Important', iconPath: "assets/icon/star-24px.svg" },
+                    { description: 'asdñlk', createdAt: new Date() , deletedAt:new Date(),  name: 'Tasks', iconPath: "assets/icon/star-24px.svg" },
+                    { description: 'asdñlk', createdAt: new Date() , deletedAt:new Date(),  name: 'Deleted', iconPath: "assets/icon/star-24px.svg" }
+                  ];
   searchedString:string;
   isEmpty: boolean = false;
 
@@ -35,12 +41,11 @@ export class TasksListComponent implements OnInit {
    * @return
    */
   loadTasksList(): void {
-    this.tasks = [
-      { description: 'asdñlk', createdAt: new Date() , deletedAt:new Date(),  name: 'Go Supermarket' },
-      { description: 'asdñlk', createdAt: new Date() , deletedAt:new Date(),  name: 'Go Pharmacy' },
-      { description: 'asdñlk', createdAt: new Date() , deletedAt:new Date(),  name: 'Important' },
-      { description: 'asdñlk', createdAt: new Date() , deletedAt:new Date(),  name: 'Remember' },
-      { description: 'asdñlk', createdAt: new Date() , deletedAt:new Date(),  name: 'Bla bla' }
+    this.tasks = [ 
+      ...this.tasks,
+      { description: 'asdñlk', createdAt: new Date() , deletedAt:new Date(), iconPath: "assets/icon/star-24px.svg" ,name: 'Go Supermarket' },
+      { description: 'asdñlk', createdAt: new Date() , deletedAt:new Date(), iconPath: "assets/icon/star-24px.svg" ,name: 'Important' },
+      { description: 'asdñlk', createdAt: new Date() , deletedAt:new Date(), iconPath: "assets/icon/star-24px.svg" ,name: 'Bla bla' }
     ]
   }
 
@@ -50,7 +55,7 @@ export class TasksListComponent implements OnInit {
    * @return
    */
   addTask(): void {
-    this.tasks.push({ description: 'asdñlk', createdAt: new Date() , deletedAt:new Date(),  name: 'New Task' })
+    this.tasks.push({ description: 'asdñlk', createdAt: new Date() , deletedAt:new Date(), iconPath:"" ,name: 'New Task' })
   }
 
   /**
@@ -58,7 +63,7 @@ export class TasksListComponent implements OnInit {
    * @params index
    * @return
    */
-  deleteTask(index:number):void {
+  deleteTask(index:number): void {
     if (index || index === 0){
       this.tasks.splice(index,1);
     }

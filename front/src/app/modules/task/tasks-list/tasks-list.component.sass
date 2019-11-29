@@ -9,14 +9,16 @@
     justify-content: center
 
     input.search
-        margin:
-            bottom: -5vh
-            top: -2vh
+        background-color: #f8f9fa5c
+        margin-top: 0.4vh
         width: 95%
-
+        &:hover
+            background-color: white
+        
     > ul.navbar-nav
-        height: 70%
-        max-height: 100%
+        height: 70vh
+        max-height: 70vh
+        margin-bottom: 2vh
         overflow:
             x: hidden
             y: auto
@@ -24,16 +26,22 @@
         width: 100%
 
         li.nav-item
-            border-bottom: 1px solid #8080804d
+            border-bottom: 1px solid $gray-border-color
             display: flex
             justify-content: space-between
-            line-height: 5vh
+            line-height: 4.2vh
             padding:
                 left: 4vw
                 right: 4vw
 
             &:first-child
-                border-top: 1px solid #8080804d
+                border-top: 1px solid $gray-border-color
+            
+            &:nth-child(4)
+                margin-bottom: 8vh
+            
+            &:nth-child(5)
+                border-top: 1px solid $gray-border-color
 
             @include breakpoint(md)
                 padding:
