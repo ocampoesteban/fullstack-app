@@ -9,7 +9,7 @@
         <li class="nav-item" *ngFor="let task of tasks | filter: 'name' : searchedString ; let _index = index; trackBy: trackByFunction" >
            <!-- <img src={{task.iconPath}} class="img-fluid" alt="Task no selected">-->
             <ng-container *ngIf="tasks.length>0; else emptyList">
-                <a class="nav-link" [routerLink]="['./detail', _index]" routerLinkActive="active">{{task.name}}</a>
+                <a class="nav-link" [routerLink]="['./', _index,'detail']" routerLinkActive="active">{{task.name}}</a>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" *ngIf="_index>=4">
                     <span aria-hidden="true" (click)="deleteTask(_index)">&times;</span>
                 </button>

@@ -7,20 +7,21 @@ import { TaskDescriptionComponent } from './task-description/task-description.co
 import { EmptyStateComponent } from 'src/app/shared/empty-state/empty-state.component';
 
 const routes: Routes = [
-  { path: '', 
+  {
+    path: '',
     component: TasksContainerComponent,
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: EmptyStateComponent },
-      { path: 'detail/:taskId', component: TaskDescriptionComponent },
-      { path: 'edit/:taskId', component: TaskEditComponent },
-      { path: 'create/:taskId', component: TaskCreateComponent },
-   ],
+      { path: 'dashboard', component: EmptyStateComponent, data: { breadcrumb: 'Dashboard' } },
+      { path: ':taskId/detail', component: TaskDescriptionComponent, data: { breadcrumb: '' } },
+      { path: ':taskId/edit', component: TaskEditComponent, data: { breadcrumb: '' } },
+      { path: 'new', component: TaskCreateComponent, data: { breadcrumb: 'new' } },
+    ],
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule] 
+  exports: [RouterModule]
 })
 export class TaskRoutingModule { }

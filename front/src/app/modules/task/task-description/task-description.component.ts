@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -6,16 +6,18 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './task-description.component.html',
   styleUrls: ['./task-description.component.sass']
 })
-export class TaskDescriptionComponent implements OnInit {
+export class TaskDescriptionComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute
   ) { }
   
   taskIDSelected:string;
+  sub$: any;
+
   
   ngOnInit() {
-    this.getParamURL();
+    this.sub$ =  this.getParamURL();
   }
 
   /**
@@ -29,5 +31,9 @@ export class TaskDescriptionComponent implements OnInit {
         this.taskIDSelected = params['taskId'];
       }
     })
+  }
+
+  ngOnDestroy() {
+    this.sub$.unsubscribe();
   }
 }
